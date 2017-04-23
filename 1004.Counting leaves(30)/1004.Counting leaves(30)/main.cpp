@@ -43,6 +43,7 @@ int main()
 		int temp_id;
 		int childNum;
 		scanf_s("%d %d", &temp_id, &childNum);
+		id[temp_id][0] = 1;//表示该节点是非叶节点
 		for (int j = 0; j < childNum; j++)
 		{
 			int temp_child;
@@ -52,6 +53,6 @@ int main()
 		}
 	}
 
-
+	
 	system("pause");
 }
