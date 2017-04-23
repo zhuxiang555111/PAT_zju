@@ -5,7 +5,7 @@
 using namespace std;
 
 
-vector<int> v[100]; //看作邻接表形式存图
+vector<int> v[100]; //see as adjacency list to store
 
 
 int book[100], maxdepth = -1;
