@@ -4,19 +4,23 @@
 
 using namespace std;
 
-
+ 
 vector<int> v[100]; //see as adjacency list to store
 
 
-int book[100], maxdepth = -1;
+int book[100], //the number of depth-level's children
+	maxdepth = -1;
 
 
-void dfs(int index, int depth) {
-	if (v[index].size() == 0) {
-		book[depth]++;
+void dfs(int index, int depth)
+{
+	if (v[index].size() == 0) // at the leaf node
+	{
+		book[depth]++; //increase the n umber of depth-level's children
 		maxdepth = max(maxdepth, depth);
 		return;
 	}
+
 	for (int i = 0; i < v[index].size(); i++)
 		dfs(v[index][i], depth + 1);
 }
@@ -25,10 +29,12 @@ void dfs(int index, int depth) {
 int main() {
 	int n, 
 		m, 
-		k, //child_number
-		node, 
-		c;
+		k, //child_amount
+		node,  //non-leaf node
+		c; //child_No
+
 	scanf_s("%d %d", &n, &m);
+
 	for (int i = 0; i < m; i++) {
 		scanf_s("%d %d", &node, &k);
 		for (int j = 0; j < k; j++) {
