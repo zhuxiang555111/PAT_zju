@@ -2,9 +2,15 @@
 #include <algorithm>
 #include <vector>
 using namespace std;
+
 const int inf = 99999999;
-int cmax, n, sp, m;
+int cmax,//max number of bikes each station could contain
+	n, //number of station
+	sp, //the problem station 
+	m; //number of roads
+
 int minNeed = inf, minBack = inf;
+
 int e[510][510], dis[510], weight[510];
 bool visit[510];
 vector<int> pre[510];
