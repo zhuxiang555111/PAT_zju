@@ -24,7 +24,8 @@ int main() {
 	for (int i = 0; i < k; i++) {
 		fill(visit, visit + 1010, false);
 		scanf("%d", &a);
-		int cnt = 0;
+		int cnt = 0;//分立的连通分量
+
 		visit[a] = true;
 		for (int j = 1; j <= n; j++) {
 			if (visit[j] == false) {
